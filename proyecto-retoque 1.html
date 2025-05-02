@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ***** CAMBIAR TÍTULO para cada proyecto de retoque ***** -->
+    <title>Detalle Retoque: Retoque fotográfico | Eduardo</title>
+    <!-- CSS General -->
+    <link rel="stylesheet" href="style.css">
+    <!-- CSS Específico para JuxtaposeJS (Slider) -->
+    <link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header consistente -->
+    <header class="site-header">
+         <div class="container header-container">
+            <a href="index.html" class="logo-link">
+                <!-- Cambia "Tu Nombre" -->
+                <span class="logo-text">Eduardo B</span>
+                <span class="logo-dot">.</span>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <!-- Marcar Portafolio como activo -->
+                    <li><a href="portafolio.html" class="active">Portafolio</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="project-detail-header fade-in-element">
+            <div class="container">
+                <!-- ***** CAMBIAR ESTO POR PROYECTO ***** -->
+                <h1 class="project-title-gradient">Retoque fotográfico</h1>
+                <p class="project-category-detail">Mejora de imagen </p>
+                <!-- *************************************** -->
+            </div>
+        </section>
+
+        <section class="project-detail-content">
+            <div class="container">
+                <!-- Sección de Comparación con Slider -->
+                <div class="project-comparison-slider fade-in-element">
+                    <h2>Antes y Después</h2>
+                    <!-- ***** INICIO SLIDER JUXTAPOSE ***** -->
+                    <!-- ***** Asegúrate de reemplazar 'ruta/a/...' con las rutas REALES de tus imágenes ANTES y DESPUÉS ***** -->
+                    <div class="juxtapose" data-startingposition="50%" data-showlabels="true">
+                        <!-- Imagen ANTES -->
+                        <img src="img/Foto 1 original.jpg" alt="Imagen original antes del retoque" data-label="Antes"/>
+                        <!-- Imagen DESPUÉS -->
+                        <img src="img/Foto 1.jpg"Imagen final después del retoque" data-label="Después"/>
+                    </div>
+                    <!-- ***** FIN SLIDER JUXTAPOSE ***** -->
+                </div>
+                <!-- Fin Sección de Comparación -->
+
+                <div class="project-description fade-in-element">
+                     <!-- ***** CAMBIAR ESTO POR PROYECTO ***** -->
+                    <h2>Sobre el Retoque</h2>
+                    <p>Este proyecto optimizó una imagen al aire libre mediante retoque digital. Se ajustaron los níveles de contraste y saturación para resaltar al vestuario y a la persona. El resultado es una imagen vibrante y dinámica.</p>
+                    <p>Herramientas: Photoshop</p>
+                    <!-- *************************************** -->
+                </div>
+
+                 <!-- Opcional: Galería adicional si tienes más imágenes del resultado -->
+                 <!--
+                 <div class="project-gallery">
+                     <h2 class="fade-in-element">Más Vistas</h2>
+                     <div class="gallery-item fade-in-element">
+                         <img src="ruta/a/otra_imagen_despues.jpg" alt="Otro ángulo o detalle">
+                         <p class="caption">Detalle del resultado</p>
+                     </div>
+                 </div>
+                 -->
+
+                <div class="project-navigation fade-in-element">
+                    <a href="portafolio.html" class="btn btn-outline">← Volver al Portafolio</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+     <!-- Footer consistente -->
+     <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-info">
+                 <a href="index.html" class="logo-link footer-logo">
+                     <!-- Cambia "Tu Nombre" -->
+                    <span class="logo-text">Eduardo B</span>
+                    <span class="logo-dot">.</span>
+                 </a>
+                 <!-- Actualiza el año si es necesario -->
+                 <p>© 2025. Eduardo Berrospi</p>
+            </div>
+            <div class="footer-social">
+                 <!-- ***** Reemplaza '#' con tus enlaces reales ***** -->
+                 <a href="https://www.behance.net/eduardoberrospi5" aria-label="Behance" title="Behance"><i class="fab fa-behance"></i></a>
+                <a href="https://www.linkedin.com/in/eduardoberrospi/" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <!-- Añade más redes si las tienes -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- Nuestro script general (con defer se ejecuta tras parsear HTML) -->
+    <script src="script.js" defer></script>
+
+    <!-- ***** CORRECCIÓN: Script de JuxtaposeJS movido al FINAL ABSOLUTO del body ***** -->
+    <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
+</body>
+</html>
