@@ -372,8 +372,66 @@ img { max-width: 100%; height: auto; display: block; vertical-align: middle; }
   .color-swatch { height: 80px; font-size: 0.8rem;}
   .typography-display { gap: 2rem; }
   .mockup-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;}
+  
+  /* Corrección Detalle de Marca en Móvil */
+      .brand-section {
+        margin-bottom: 3rem;
+        padding-top: 1.5rem;
+   }
+   .logo-variations-grid {
+       /* Forzar menos columnas o una sola */
+       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Ajustar tamaño mínimo */
+       padding: 0 5%; /* Más padding lateral */
+   }
+   .color-swatch-grid {
+       /* Ajustar tamaño mínimo y padding */
+       grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+       padding: 0;
+   }
+    .typography-display {
+       /* Apilar las muestras de tipografía */
+       grid-template-columns: 1fr;
+       gap: 1.5rem; /* Reducir espacio */
+    }
+   .mockup-grid {
+       /* Ajustar tamaño mínimo de mockups */
+       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   }
+
+   /* Corrección Imagen "Sobre Mí" en Móvil */
+   .about-container {
+       gap: 2rem; /* Reducir espacio entre imagen y texto */
+   }
+   .about-image {
+       /* Simplificar a círculo y controlar tamaño */
+       flex-basis: auto; /* Resetear base flex */
+       width: 60%;      /* Ancho relativo */
+       max-width: 250px; /* Tamaño máximo */
+       margin-left: auto;
+       margin-right: auto;
+       border: none; /* Quitar borde hexagonal si lo tenía */
+       padding: 0;   /* Quitar padding si lo tenía */
+       background: none; /* Quitar fondo si lo tenía */
+   }
+   .about-image img {
+       border-radius: 50%; /* Hacer la imagen redonda */
+       border: 5px solid var(--accent-yellow); /* Aplicar borde a la imagen */
+       box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Mantener sombra */
+   }
+   .about-image::before, /* Ocultar pseudo-elementos del hexágono */
+   .about-image::after {
+       display: none;
+   }
+   .about-text {
+       text-align: center; /* Centrar texto en móvil */
+   }
+   .about-text h2::after { /* Centrar línea bajo H2 */
+        left: 50%; transform: translateX(-50%);
+   }
 
 }
+
+ /* Fin de @media (max-width: 768px) */
 
 @media (max-width: 480px) {
   html { font-size: 14px; }
@@ -408,7 +466,40 @@ img { max-width: 100%; height: auto; display: block; vertical-align: middle; }
   .color-swatch { height: 70px; }
   .typography-display { grid-template-columns: 1fr; }
   .mockup-grid { grid-template-columns: 1fr; }
+
+
+   /* Asegurar que logos pequeños no se achiquen demasiado */
+   .logo-variations-grid {
+    grid-template-columns: repeat(2, 1fr); /* Forzar 2 columnas */
+    gap: 1rem;
 }
+.logo-variations-grid img {
+   max-height: 50px; /* Ajustar altura máxima si es necesario */
+}
+
+/* Asegurar que swatches de color quepan */
+.color-swatch-grid {
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    gap: 0.8rem;
+}
+.color-swatch { height: 70px; }
+
+/* Reducir tamaño imagen "Sobre Mí" aún más */
+.about-image {
+   max-width: 200px;
+    width: 50%;
+}
+.about-image img {
+    border-width: 4px; /* Borde más fino */
+}
+
+/* Reducir tamaño títulos en detalle de marca */
+.brand-section h3, .brand-section h4 { font-size: 1.3rem; }
+.mockup-grid { grid-template-columns: 1fr; } /* Forzar una columna mockups */
+
+} 
+
+/* Fin de @media (max-width: 480px) */
 
 
 
