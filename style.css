@@ -417,14 +417,22 @@ img { max-width: 100%; height: auto; display: block; vertical-align: middle; }
        border-radius: 50%; /* Hacer la imagen redonda */
        border: 5px solid var(--accent-yellow); /* Aplicar borde a la imagen */
        box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Mantener sombra */
-   }
+       width: 100%;        /* Asegurar que la imagen llene el círculo */
+      height: 100%;       /* Asegurar que la imagen llene el círculo */
+      object-fit: cover;  /* Para que no se deforme */
+  }
    .about-image::before, /* Ocultar pseudo-elementos del hexágono */
    .about-image::after {
        display: none;
    }
+
    .about-text {
        text-align: center; /* Centrar texto en móvil */
    }
+   .about-text h2 {
+    text-align: center; /* Forzar centrado del H2 explícitamente */
+    }
+   
    .about-text h2::after { /* Centrar línea bajo H2 */
         left: 50%; transform: translateX(-50%);
    }
@@ -466,7 +474,20 @@ img { max-width: 100%; height: auto; display: block; vertical-align: middle; }
   .color-swatch { height: 70px; }
   .typography-display { grid-template-columns: 1fr; }
   .mockup-grid { grid-template-columns: 1fr; }
-
+/* --- Centrar Logos en Detalle de Marca en Móvil --- */
+.brand-section .logo-display,
+.brand-section .logo-variations-grid {
+    /* Si es un grid, esto debería centrar los items */
+     justify-items: center;
+     /* Como fallback o si no es grid, centrar texto/imágenes inline */
+     text-align: center;
+    }
+    .brand-section .logo-display img,
+    .brand-section .logo-variations-grid img {
+        margin-left: auto; /* Centrar imagen tipo bloque */
+        margin-right: auto;
+        display: block; /* Asegurar que sea bloque */
+    }
 
    /* Asegurar que logos pequeños no se achiquen demasiado */
    .logo-variations-grid {
@@ -494,8 +515,6 @@ img { max-width: 100%; height: auto; display: block; vertical-align: middle; }
 }
 
 /* Reducir tamaño títulos en detalle de marca */
-.brand-section h3, .brand-section h4 { font-size: 1.3rem; }
-.mockup-grid { grid-template-columns: 1fr; } /* Forzar una columna mockups */
 
 } 
 
