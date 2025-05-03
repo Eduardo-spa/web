@@ -471,6 +471,10 @@ img { max-width: 100%; height: auto; display: block; vertical-align: middle; }
   .project-title-gradient { font-size: 1.9rem; }
   .project-category-detail { font-size: 1rem; }
   .gallery-item .caption, .mockup-grid .gallery-item .caption, .video-caption { font-size: 0.85rem; }
+  .gallery-item2 .caption, /* *** AÑADIR ESTE SELECTOR *** */
+.video-caption {
+    font-size: 0.85rem; /* Asegura que todos los captions se achiquen */
+}
   .footer-container { flex-direction: column; text-align: center; gap: 1.5rem;}
   .footer-social a { margin: 0 10px; }
   /* .juxtapose { aspect-ratio: 3 / 4; } */ /* Mantener aspect ratio o ajustar si es necesario */
