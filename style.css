@@ -112,7 +112,6 @@ img { max-width: 100%; height: auto; display: block; vertical-align: middle; }
 .skill-item { background-color: var(--white); padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
 .skill-info { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; }
 .skill-name { font-weight: 600; color: var(--dark-text); font-size: 1rem; margin-right: 10px; }
-.skill-name i { margin-right: 8px; color: var(--primary-blue); width: 1.2em; text-align: center; }
 .skill-level { font-size: 0.85rem; color: var(--medium-gray); font-weight: 600; white-space: nowrap; }
 .progress-bar-container { background-color: var(--light-gray); border-radius: 10px; height: 10px; overflow: hidden; width: 100%; }
 .progress-bar { height: 100%; width: 0; background: var(--gradient-progress); border-radius: 10px; display: block; transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
@@ -379,10 +378,10 @@ img { max-width: 100%; height: auto; display: block; vertical-align: middle; }
         padding-top: 1.5rem;
    }
    .logo-variations-grid {
-       /* Forzar menos columnas o una sola */
-       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Ajustar tamaño mínimo */
-       padding: 0 5%; /* Más padding lateral */
-   }
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    padding: 0 5%;
+    justify-items: center; /* *** CENTRAR HORIZONTALMENTE los logos *** */
+}
    .color-swatch-grid {
        /* Ajustar tamaño mínimo y padding */
        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
@@ -400,8 +399,10 @@ img { max-width: 100%; height: auto; display: block; vertical-align: middle; }
 
    /* Corrección Imagen "Sobre Mí" en Móvil */
    .about-container {
-       gap: 2rem; /* Reducir espacio entre imagen y texto */
-   }
+    gap: 2rem; /* Reducir espacio */
+    /* Asegurar que se apilen si no lo hace ya */
+    flex-direction: column;
+}
    .about-image {
        /* Simplificar a círculo y controlar tamaño */
        flex-basis: auto; /* Resetear base flex */
@@ -414,25 +415,21 @@ img { max-width: 100%; height: auto; display: block; vertical-align: middle; }
        background: none; /* Quitar fondo si lo tenía */
    }
    .about-image img {
-       border-radius: 50%; /* Hacer la imagen redonda */
-       border: 5px solid var(--accent-yellow); /* Aplicar borde a la imagen */
-       box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Mantener sombra */
-       width: 100%;        /* Asegurar que la imagen llene el círculo */
-      height: 100%;       /* Asegurar que la imagen llene el círculo */
-      object-fit: cover;  /* Para que no se deforme */
-  }
+    border-radius: 50%; /* Hacerla redonda */
+    border: 5px solid var(--accent-yellow); /* Borde amarillo */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Sombra */
+    width: 100%; /* Hacer que llene el .about-image */
+    height: 100%;
+    object-fit: cover; /* Asegurar que cubra bien */
+}
+
    .about-image::before, /* Ocultar pseudo-elementos del hexágono */
    .about-image::after {
        display: none;
    }
-
    .about-text {
        text-align: center; /* Centrar texto en móvil */
    }
-   .about-text h2 {
-    text-align: center; /* Forzar centrado del H2 explícitamente */
-    }
-   
    .about-text h2::after { /* Centrar línea bajo H2 */
         left: 50%; transform: translateX(-50%);
    }
@@ -474,20 +471,7 @@ img { max-width: 100%; height: auto; display: block; vertical-align: middle; }
   .color-swatch { height: 70px; }
   .typography-display { grid-template-columns: 1fr; }
   .mockup-grid { grid-template-columns: 1fr; }
-/* --- Centrar Logos en Detalle de Marca en Móvil --- */
-.brand-section .logo-display,
-.brand-section .logo-variations-grid {
-    /* Si es un grid, esto debería centrar los items */
-     justify-items: center;
-     /* Como fallback o si no es grid, centrar texto/imágenes inline */
-     text-align: center;
-    }
-    .brand-section .logo-display img,
-    .brand-section .logo-variations-grid img {
-        margin-left: auto; /* Centrar imagen tipo bloque */
-        margin-right: auto;
-        display: block; /* Asegurar que sea bloque */
-    }
+
 
    /* Asegurar que logos pequeños no se achiquen demasiado */
    .logo-variations-grid {
@@ -495,7 +479,7 @@ img { max-width: 100%; height: auto; display: block; vertical-align: middle; }
     gap: 1rem;
 }
 .logo-variations-grid img {
-   max-height: 50px; /* Ajustar altura máxima si es necesario */
+   max-height: 45px; /* Ajustar altura máxima si es necesario */
 }
 
 /* Asegurar que swatches de color quepan */
@@ -515,9 +499,10 @@ img { max-width: 100%; height: auto; display: block; vertical-align: middle; }
 }
 
 /* Reducir tamaño títulos en detalle de marca */
+.brand-section h3, .brand-section h4 { font-size: 1.3rem; }
+.mockup-grid { grid-template-columns: 1fr; } /* Forzar una columna mockups */
 
 } 
-
 /* Fin de @media (max-width: 480px) */
 
 
