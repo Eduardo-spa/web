@@ -207,7 +207,7 @@ img { max-width: 100%; height: auto; display: block; vertical-align: middle; }
 /* Sección Logo */
 .logo-display.primary-logo img { max-width: 550px; margin: 0 auto; display: block; }
 .logo-variations-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1.5rem; align-items: center; justify-items: center; margin-top: 1rem; padding: 0 10%; }
-.logo-variations-grid img { max-width: 100%; max-height: 105px; filter: drop-shadow(0 2px 3px rgba(0,0,0,0.1)); }
+.logo-variations-grid img { max-width: 100%; max-height: 105px; filter: drop-shadow(0 2px 3px rgba(0,0,0,0.1)); margin: 0 auto;}
 
 /* Sección Paleta de Colores */
 .color-palette-section h3::after { background: var(--gradient-tertiary); } /* Variar color línea */
@@ -379,8 +379,10 @@ img { max-width: 100%; height: auto; display: block; vertical-align: middle; }
    }
    .logo-variations-grid {
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    padding: 0 5%;
-    justify-items: center; /* *** CENTRAR HORIZONTALMENTE los logos *** */
+    padding: 0 15%; /* Aumentar padding lateral si es necesario */
+    justify-items: center; /* Asegurar centrado de items */
+    align-items: center;
+    gap: 1.5rem;
 }
    .color-swatch-grid {
        /* Ajustar tamaño mínimo y padding */
@@ -482,11 +484,15 @@ img { max-width: 100%; height: auto; display: block; vertical-align: middle; }
 
    /* Asegurar que logos pequeños no se achiquen demasiado */
    .logo-variations-grid {
-    grid-template-columns: repeat(2, 1fr); /* Forzar 2 columnas */
+    grid-template-columns: 1fr; /* Forzar una sola columna */
+    padding: 0 20%; /* Aumentar padding si se ve muy ancho */
     gap: 1rem;
+    /* justify-items: center; se hereda */
 }
+/* Ajustar altura máxima de la imagen si es necesario */
+
 .logo-variations-grid img {
-   max-height: 45px; /* Ajustar altura máxima si es necesario */
+   max-height: 70px; /* Ajustar altura máxima si es necesario */
 }
 
 /* Asegurar que swatches de color quepan */
