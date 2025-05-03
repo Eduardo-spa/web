@@ -472,8 +472,12 @@ img { max-width: 100%; height: auto; display: block; vertical-align: middle; }
   .project-category-detail { font-size: 1rem; }
   .gallery-item .caption, .mockup-grid .gallery-item .caption, .video-caption { font-size: 0.85rem; }
   .gallery-item2 .caption, /* *** AÑADIR ESTE SELECTOR *** */
-.video-caption {
+  .video-caption {
     font-size: 0.85rem; /* Asegura que todos los captions se achiquen */
+}
+  .gallery-item2 img {
+  max-width: 70%; /* O un valor en px como max-width: 300px; */
+  /* height: auto; ya debería estar por defecto */
 }
   .footer-container { flex-direction: column; text-align: center; gap: 1.5rem;}
   .footer-social a { margin: 0 10px; }
