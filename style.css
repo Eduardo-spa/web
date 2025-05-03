@@ -438,7 +438,7 @@ img { max-width: 100%; height: auto; display: block; vertical-align: middle; }
 }
 
    .about-text h2::after { /* Centrar línea bajo H2 */
-        left: 50%; transform: translateX(-50%);
+        left: 50%; transform: translateX(-50%); margin-top: 1rem;
    }
 
 }
