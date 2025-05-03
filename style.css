@@ -506,9 +506,6 @@ img { max-width: 100%; height: auto; display: block; vertical-align: middle; }
     border-width: 4px; /* Borde más fino */
 }
 
-.about-text {
-  width: 100%; /* Permitir que ocupe todo el ancho menos el padding del container */
-}
 
 /* Reducir tamaño títulos en detalle de marca */
 .brand-section h3, .brand-section h4 { font-size: 1.3rem; }
