@@ -406,8 +406,8 @@ img { max-width: 100%; height: auto; display: block; vertical-align: middle; }
    .about-image {
        /* Simplificar a círculo y controlar tamaño */
        flex-basis: auto; /* Resetear base flex */
-       width: 60%;      /* Ancho relativo */
-       max-width: 250px; /* Tamaño máximo */
+       width: 70%;      /* Ancho relativo */
+       max-width: 280px; /* Tamaño máximo */
        margin-left: auto;
        margin-right: auto;
        border: none; /* Quitar borde hexagonal si lo tenía */
@@ -415,12 +415,11 @@ img { max-width: 100%; height: auto; display: block; vertical-align: middle; }
        background: none; /* Quitar fondo si lo tenía */
    }
    .about-image img {
-    border-radius: 50%; /* Hacerla redonda */
-    border: 5px solid var(--accent-yellow); /* Borde amarillo */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Sombra */
+    border-radius: 0; /* Hacerla redonda */
+    border: none; /* Borde amarillo */
     width: 100%; /* Hacer que llene el .about-image */
-    height: 100%;
-    object-fit: cover; /* Asegurar que cubra bien */
+    height: auto;
+    object-fit: contain; /* Asegurar que cubra bien */
 }
 
    .about-image::before, /* Ocultar pseudo-elementos del hexágono */
@@ -429,7 +428,15 @@ img { max-width: 100%; height: auto; display: block; vertical-align: middle; }
    }
    .about-text {
        text-align: center; /* Centrar texto en móvil */
+       width: 95%; /* Evitar que el texto toque los bordes */
+       max-width: 600px; /* Limitar ancho máximo del texto */
    }
+
+   .about-text h2 {
+    text-align: center; /* Asegurar centrado del H2 */
+    margin-bottom: 1rem; /* Ajustar margen */
+}
+
    .about-text h2::after { /* Centrar línea bajo H2 */
         left: 50%; transform: translateX(-50%);
    }
@@ -491,11 +498,16 @@ img { max-width: 100%; height: auto; display: block; vertical-align: middle; }
 
 /* Reducir tamaño imagen "Sobre Mí" aún más */
 .about-image {
-   max-width: 200px;
-    width: 50%;
+  max-width: 220px; /* Hacerla un poco más pequeña en móviles muy estrechos */
+  width: 65%;
 }
+
 .about-image img {
     border-width: 4px; /* Borde más fino */
+}
+
+.about-text {
+  width: 100%; /* Permitir que ocupe todo el ancho menos el padding del container */
 }
 
 /* Reducir tamaño títulos en detalle de marca */
